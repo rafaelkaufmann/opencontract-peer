@@ -1,0 +1,33 @@
+{
+  "name": "opencontract-peer",
+  "version": "0.0.1",
+  "description": "Implementation of an OpenContract peer on Node.js",
+  "author": "Rafael Kaufmann <rafael.kaufmann@gmail.com>",
+  "contributors": [{
+    "name": "Rafael Kaufmann",
+    "email": "rafael.kaufmann@gmail.com"
+  }],
+  "main": "lib/peer.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafaelkaufmann/opencontract-peer"
+  },
+  "bugs": {
+    "url": "https://github.com/rafaelkaufmann/opencontract-peer/issues"
+  },
+  "keywords": [
+    "contracts",
+    "p2p"
+  ],
+  "dependencies": {
+    "babel": ">=5.6.4",
+    "lodash": ">=3.9.3",
+    "chai": ">=3.0.0",
+    "node-uuid": ">=1.4.3",
+    "es6-module-loader": ">=0.17.3",
+    "kad": ">=0.5.1",
+    "levelup": ">=1.2.1",
+    "leveldown": "1.4.1"
+  },
+  "license": "MIT"
+}
