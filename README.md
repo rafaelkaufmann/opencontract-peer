@@ -2,11 +2,21 @@
 
 This project implements an [OpenContract](https://github.com/rafaelkaufmann/opencontract) peer. It uses:
 
-* [Kademlia](https://github.com/gordonwritescode/kad) for the DHT logic.
+* A modified implementation of [Kademlia](https://github.com/rafaelkaufmann/kad) for the DHT logic.
 * UDP as the Kademlia transport, with [node-nat-upnp](https://github.com/indutny/node-nat-upnp) for NAT traversal and hole punching.
-* (LevelUP)[https://www.npmjs.com/package/levelup] for storage.
+* [LevelUP](https://www.npmjs.com/package/levelup) for storage.
 
 As with the main OpenContract lib, we use ES6/7 extensively through [Babel](https://babeljs.io).
+
+##The P2P architecture
+
+The starting point is the [Kademlia implementation in JavaScript](https://github.com/gordonwritescode/kad). On top of that, a few modifications were made:
+
+* Documents are made up of a mutable and an immutable part. Keys are the hashes of the immutable part. The mutable part satisfies the [CALM principle](https://databeta.wordpress.com/2010/10/28/the-calm-conjecture-reasoning-about-consistency/), and is thus eventually consistent.
+* To support the above, additional messages for updating were added.
+* As peers are also implementations of the Oracle API, additional messages to support that API were added.
+
+##The Oracle API
 
 ##Usage
 
